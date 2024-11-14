@@ -26,6 +26,7 @@ function App() {
         
         } />
       <Route path="/login" element={<Login/>} />
+      <Route path="/profile" element={<Login/>} />
     </Routes>
     </BrowserRouter>
 

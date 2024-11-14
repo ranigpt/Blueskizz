@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const jwt = require("jsonwebtoken");
 
 const AuthenticateToken =(req,res,next)=>{
 
@@ -15,11 +16,12 @@ if(!token){
     try{
 
         const decoded = jwt.verify(token,company_secret);
+        console.log(decoded);
         req.user = decoded;
         next();
     }catch(e){
 
-        res.status(401).json({msg:"Token is not valid"});
+        res.status(401).json({msg:`Token is not valid ${e}`});
 }
 };
 

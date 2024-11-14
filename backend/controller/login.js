@@ -25,10 +25,15 @@ const login = async (req,res)=>{
  
         }
 
+        console.log(`user is logged in ${user.Email}`);
+        //console.log(user);
+        console.log("userid checking");
+        console.log(user._id);
+
         const token = jwt.sign(
           {
-            id: User.id,
-            email : User.Email,
+            id: user._id,
+            email : user.Email,
             
           },
           company_secret,

@@ -12,6 +12,7 @@ const LoginIn = require('./routes/Login.route');
 //const { default: mongoose } = require('mongoose');
 //const mongoosh = require('mongoosh');
 
+const PostAPI = require('./routes/Post.route');
 
 const url = 'mongodb+srv://rani2004g2:FMHdCHJtrhNheSq8@cluster0.jpnmd.mongodb.net/Blueskizz';
 
@@ -49,7 +50,7 @@ app.get('/' , (req,res)=>{
 app.use('/register',Routeregister);
 
 app.use('/login',LoginIn);
-
+app.use('/post', PostAPI);
 
 app.listen(port , ()=>{
     console.log(`listing i m ${port}`);
